@@ -1,4 +1,5 @@
 import numpy as np
+import cv2 as cv
 
 def get_image_info(image):
     """
@@ -12,7 +13,15 @@ def get_image_info(image):
     """
     
     ### START CODE HERE ###
-    ### TODO
+    height, width = image.shape[:2]
+
+    dtype = image.dtype
+
+    total_pixels = image.size 
+    depth = total_pixels // (height * width) 
+
+    min_val, max_val, _, _ = cv.minMaxLoc(image)
+    mean_val, std_val = cv.meanStdDev(image)
     ### END CODE HERE ###
 
     return {
