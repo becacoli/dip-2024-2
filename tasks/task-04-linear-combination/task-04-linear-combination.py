@@ -20,7 +20,11 @@ def linear_combination(i1: np.ndarray, i2: np.ndarray, a1: float, a2: float) -> 
         raise ValueError("Input images must have the same dimensions.")
 
     ### START CODE HERE ###
-    ### TODO
+    dst = cv2.addWeighted(i1, a1, i2, a2, 0)
+
+    cv2.imshow("dst", dst)
+
+    cv2.waitKey(0)
     ### END CODE HERE ###
 
     return None
